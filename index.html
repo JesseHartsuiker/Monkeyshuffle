@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays</title>
+    <style>
+    html{
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+    }
+
+
+
+    body{
+    font-family: 'copse', Serif;
+    text-align: center;
+}
+    img{
+        height: 300px;
+        width: 500px;
+        border: 0px;
+    }
+    #pics{
+        width: 1500px;
+        height: 900px;
+        border: solid 1px black;
+        font-size: 0px;
+        margin: auto;
+    }
+
+    </style>
+</head>
+
+<body>
+<h1>Javascript Shuffle</h1>
+<div div id="pics">
+    <img src="img/shuffle1.jpg">
+    <img src="img/shuffle2.jpg">
+    <img src="img/shuffle3.jpg">
+    <img src="img/shuffle4.jpg">
+    <img src="img/shuffle5.jpg">
+    <img src="img/shuffle6.jpg">
+    <img src="img/shuffle7.jpg">
+    <img src="img/shuffle8.jpg">
+    <img src="img/shuffle9.jpg">
+
+</div>
+<script>
+    var plaatjes = document.getElementsByTagName("img");
+    var random = [];
+    var randomnumbers = [];
+
+    while(randomnumbers.length <9){
+        random = Math.floor(Math.random()*9+1);
+        console.log("Random number = " + random);
+        if (randomnumbers.lastIndexOf(random)== -1){
+            randomnumbers.push(random);
+        }
+    }
+    console.log("Complete array = " + randomnumbers);
+    console.log("Aantal getallen in array plaatjes = " + plaatjes.length);
+
+    for (var i = 0; i < 9 ; i++) {
+        var pad = "img/shuffle" + randomnumbers[i] + ".jpg";
+        console.log("Het random pad is " + pad);
+        plaatjes[i].src = pad;
+    }
+
+</script>
+
+</body>
+</html>
